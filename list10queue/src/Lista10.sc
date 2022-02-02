@@ -20,7 +20,6 @@ class MyQueue[+T] private (private val firstList: List[T], private val lastList:
         else new MyQueue[T](lastList.reverse, Nil)
       case _ :: tl => new MyQueue[T](tl, lastList)
 
-
   def enqueue[U >: T](x: U) =
     firstList match
       case Nil => new MyQueue[U](List(x), Nil)
